@@ -1,0 +1,127 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+// Final Exam
+// EE 1301
+// Danyal Falsafi
+// falsa003
+class car
+{
+private:
+    string type;
+    float capacity;
+    float fuel;
+    float mpg;
+
+public:
+    string get_type()
+    {
+        return type;
+    }
+
+    float get_capacity()
+    {
+        return capacity;
+    }
+
+    float get_fuel()
+    {
+        return fuel;
+    }
+
+    float get_mpg()
+    {
+        return mpg;
+    }
+
+    float refuel(float gals)
+    {
+        fuel += gals;
+        if (fuel > capacity)
+        {
+            fuel = capacity;
+        }
+        return fuel;
+    }
+
+    float drive(float miles)
+    {
+        float fuelUsed = (miles / mpg);
+
+        fuel -= fuelUsed;
+        if (fuel < 0)
+        {
+            fuel = 0;
+        }
+
+        return fuel;
+    }
+    car();
+    car(string t, float c, float m);
+};
+car::car()
+{
+    type = "";
+    capacity = 0;
+    fuel = 0;
+    mpg = 0;
+}
+
+car::car(string t, float c, float m)
+{
+    type = t;
+    capacity = c;
+    fuel = 0;
+    mpg = m;
+}
+
+int main()
+{
+    int NC = 0;
+    cout << "How many cars do you want? ";
+    cin >> NC;
+    car *fleet = new car[NC];
+
+    for (int i = 0; i < NC; ++i)
+    {
+        float capacity;
+        float miles;
+        float mpg;
+        float gallons;
+        string type;
+
+        cout << "Enter car type: ";
+        cin >> type;
+        cout << "Specify capacity and mpg: ";
+        cin >> capacity >> mpg;
+        fleet[i] = car(type, capacity, mpg);
+        cout << "How many gallons of fuel to add? ";
+        cin >> gallons;
+        fleet[i].refuel(gallons);
+        cout << "How many miles to drive? ";
+        cin >> miles;
+        fleet[i].drive(miles);
+        cout << fleet[i].get_type() << " has " << fleet[i].get_fuel() << " gallons of fuel in the tank." << endl;
+    }
+
+    delete[] fleet;
+
+    return 0;
+}
+
+Graded
+            Final Exam
+                Select each question to review feedback and grading details.Student
+                    Danyal Falsafi
+                        Total Points 100 /
+        100 pts
+
+            Autograder Score 0.0 /
+        0.0 Failed Tests
+            Default Testcase(0 / 0)
+                Passed Tests
+        Compilation Test(0 / 0)
+            Basic Testcase(0 / 0)
+                Testcase
+    - 1(0 / 0) Testcase - 2(0 / 0) Question 2 Question 1 50 / 50 pts Question 3 Question 2 50 / 50 pts
