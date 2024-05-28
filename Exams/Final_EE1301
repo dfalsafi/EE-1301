@@ -110,18 +110,5 @@ int main()
     return 0;
 }
 
-Graded
-            Final Exam
-                Select each question to review feedback and grading details.Student
-                    Danyal Falsafi
-                        Total Points 100 /
-        100 pts
 
-            Autograder Score 0.0 /
-        0.0 Failed Tests
-            Default Testcase(0 / 0)
-                Passed Tests
-        Compilation Test(0 / 0)
-            Basic Testcase(0 / 0)
-                Testcase
     - 1(0 / 0) Testcase - 2(0 / 0) Question 2 Question 1 50 / 50 pts Question 3 Question 2 50 / 50 pts
